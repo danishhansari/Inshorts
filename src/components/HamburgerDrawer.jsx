@@ -11,11 +11,26 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function HamburgerDrawer() {
   const [state, setState] = React.useState({
     left: false
   });
+
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: prefersDarkMode ? 'dark' : 'light',
+        },
+      }),
+    [prefersDarkMode],
+  );
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -68,14 +83,16 @@ function HamburgerDrawer() {
     <div>
         <React.Fragment key={'left'}>
           <Button onClick={toggleDrawer('left', true)}><MenuIcon /></Button>
+          <ThemeProvider theme={theme}>
           <SwipeableDrawer
             anchor={'left'}
             open={state['left']}
             onClose={toggleDrawer('left', false)}
             onOpen={toggleDrawer('left', true)}
-          >
+            >
             {list('left')}
           </SwipeableDrawer>
+          </ThemeProvider>
         </React.Fragment>
     </div>
   );
