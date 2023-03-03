@@ -1,10 +1,11 @@
 import "./App.css";
 import NavInshorts from "./components/NavInshorts.jsx";
-import Hd from "./components/HamburgerDrawer";
+import NewsContent from "./components/NewsContent";
 function App() {
   return (
     <div className="App">
       <NavInshorts />
+      <NewsContent />
     </div>
   );
 }
