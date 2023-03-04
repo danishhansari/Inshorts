@@ -1,10 +1,11 @@
 @import url(../reset.css);
 .downloadMessage{
-    width: 95%;
+    width: 100%;
     height: 48px;
     background-color: #f43336;
     padding-inline: 3.5em;
     color: white;
+    margin-block-end: 1em;
     font-weight: 500;
     display: flex;
     align-items: center;

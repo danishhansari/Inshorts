@@ -11,7 +11,7 @@ function App() {
   const [newsResults,setNewsResults] = useState()
   const newsApi = async () => {
     try {
-      const news = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${apikey}`);
+      const news = await axios.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${apikey}`);
       setNewsArray(news.data.articles);
       setNewsResults(news.data.totalResults);
     } catch (error) {
@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <NavInshorts setCategories={setCategories}/>
-      <NewsContent />
+      <NewsContent newsArray={newsArray} newsResults={newsResults} />
       <Footer />
     </div>
   );
