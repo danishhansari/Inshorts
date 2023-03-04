@@ -1,0 +1,22 @@
+.footer{
+    background: #383838;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding-block: .5em;
+}
+.fa{
+    font-size: 1.5em;
+    transition: .3s color ;
+    margin-top: .5em;
+}
+.fa-twitter{
+    margin-inline: .5em;
+}
+.fa-twitter:hover,
+.fa-link:hover{
+    color: steelblue;
+}
+.fa-github:hover{
+    color: grey;
+}

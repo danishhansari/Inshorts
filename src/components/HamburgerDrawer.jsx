@@ -14,9 +14,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import categories from '../data/categories';
-// import CssBaseline from '@mui/material/CssBaseline';
+import { borderRadius } from '@mui/system';
 
-function HamburgerDrawer() {
+function HamburgerDrawer({ setCategories }) {
   const [state, setState] = React.useState({
     left: false
   });
@@ -56,10 +56,7 @@ function HamburgerDrawer() {
         {['Categories'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+            <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -67,8 +64,8 @@ function HamburgerDrawer() {
       <Divider />
       <List>
         {categories.map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+          <ListItem style={{height:50}} key={text} onClick={()=> setCategories(text)}>
+            <ListItemButton style={{borderRadius:"5px"}}>
             <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

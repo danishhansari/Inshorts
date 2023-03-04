@@ -1,11 +1,11 @@
 import React from "react";
 import "./Navinshorts.css";
-import Hd from "./HamburgerDrawer";
-const NavInshorts = () => {
+import HamburgerDrawer from "./HamburgerDrawer";
+const NavInshorts = ({setCategories }) => {
   return (
     <div className="nav">
       <div className="icon">
-        <Hd />
+        <HamburgerDrawer setCategories={setCategories} />
       </div>
       <img
         style={{ cursor: "pointer", height: "80%" }}
