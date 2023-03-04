@@ -4,7 +4,7 @@ import play from './assets/playstore.png';
 import app from './assets/appstore.png';
 import './newsContent.css';
 import Newscard from "../components/Newscard/Newscard"
-const NewsContent = ({newsArray,newsResults}) => {
+const NewsContent = ({newsArray,newsResults, loadmore,setloadmore}) => {
   return (
     <Container maxWidth="lg" style={{marginTop:"2em"}}>
       <div className="content">
@@ -20,6 +20,13 @@ const NewsContent = ({newsArray,newsResults}) => {
         {newsArray.map((newsItem) => (
         <Newscard newsItem={newsItem} key={newsItem.title} />
         ))}
+        {
+          loadmore<=newsResults && (
+            <>
+          <button className='load-more' onClick={()=>setloadmore(loadmore+20)}>Load more</button>
+            </>
+          )
+        }
       </div>
   </Container>
   )

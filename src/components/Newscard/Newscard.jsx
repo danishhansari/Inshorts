@@ -27,7 +27,11 @@ const Newscard = ({ newsItem, newsResults }) => {
               <b> short </b>
               by{" "}
               <span className="muted-text">
-                {newsItem.author ? newsItem.author : "unknown"} /
+                {newsItem.author ? newsItem.author : "unknown"} / {" "}
+                {
+                  time
+                  ?`${hour-12}:${date[4].substring(3,5)} pm`
+                  :`${hour}:${date[4].substring(3,5)} am`} on {date[2]} {date[1]} {date[3]},{date[0]}
               </span>
             </a>
           </span>

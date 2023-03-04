@@ -19,7 +19,23 @@
 .bold{
     font-weight: 700;
 }
-
+.load-more{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-block: 2em;
+    margin-block-end: 3em;
+    font-weight: 500;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0,0,0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.load-more:hover{
+}
 @media (max-width:995px){
     .downloadMessage{
         display: none;
